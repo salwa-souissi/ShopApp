@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.ShopPage">
+
+    <StackLayout Orientation="Vertical">
+        <StackLayout BackgroundColor="#443E43" VerticalOptions="StartAndExpand" Orientation="Horizontal" WidthRequest="60" HeightRequest="60">
+            <ScrollView x:Name="MyScroll" Orientation = "Horizontal" >
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Travel" TextColor="White"  BackgroundColor="#443E43"></Button>
+                    <Button Text="Shoes" TextColor="White"  BackgroundColor="#443E43"></Button>
+                    <Button Text="Bags" TextColor="White"  BackgroundColor="#443E43"></Button>
+                    <Button Text="Accessories" TextColor="White"  BackgroundColor="#443E43"></Button>
+                    <Button Text="Dresses" TextColor="White"  BackgroundColor="#443E43"></Button>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+        <StackLayout   VerticalOptions="StartAndExpand"  Orientation="Horizontal" WidthRequest="60" HeightRequest="60" BackgroundColor="ForestGreen" >
+            <SearchBar x:Name="SearchBar"  Text="Search here" TextColor="Black" HorizontalOptions="StartAndExpand"/>
+            <Image Source="settings.png" HorizontalOptions="End"></Image>
+        </StackLayout>
+
+<StackLayout BackgroundColor="#443E43" VerticalOptions="EndAndExpand" Orientation="Horizontal" WidthRequest="50" HeightRequest="50">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+            <Image  Source="Home.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand" HeightRequest="30" WidthRequest="30"/>
+            <Image Source="Search.png"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand"  HeightRequest="20" WidthRequest="20"/>
+            <Image Source="Menu.png" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand"  HeightRequest="20" WidthRequest="20"/>
+            <Image  Source="Cart.png" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20" />
+            <Image  Source="Account.png"    Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
