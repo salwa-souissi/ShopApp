@@ -4,7 +4,7 @@
              x:Class="ShopApp.ShopPage">
 
     <StackLayout Orientation="Vertical">
-        <StackLayout BackgroundColor="#443E43" VerticalOptions="StartAndExpand" Orientation="Horizontal" WidthRequest="60" HeightRequest="60">
+        <StackLayout BackgroundColor="#443E43" VerticalOptions="Start" Orientation="Horizontal" WidthRequest="60" HeightRequest="60">
             <ScrollView x:Name="MyScroll" Orientation = "Horizontal" >
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Travel" TextColor="White"  BackgroundColor="#443E43"></Button>
@@ -15,13 +15,76 @@
                 </StackLayout>
             </ScrollView>
         </StackLayout>
-
-        <StackLayout   VerticalOptions="StartAndExpand"  Orientation="Horizontal" WidthRequest="60" HeightRequest="60" BackgroundColor="ForestGreen" >
-            <SearchBar x:Name="SearchBar"  Text="Search here" TextColor="Black" HorizontalOptions="StartAndExpand"/>
+        <StackLayout Orientation="Horizontal"  VerticalOptions="Start" >
+            <SearchBar x:Name="SearchBar"  Text="Search here" FontSize="12" TextColor="Black" HorizontalOptions="FillAndExpand"   />
             <Image Source="settings.png" HorizontalOptions="End"></Image>
         </StackLayout>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="ForestGreen" >
+            <Grid Padding="10" >
+                <ListView SeparatorVisibility="None" x:Name="ListProducts" HasUnevenRows="True" VerticalOptions="Fill">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="0"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame BindingContext="{Binding Item1}" Padding="1"  HasShadow="False" >
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="100"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding Status}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="#443E43"/>
+                                                 <Frame  Padding="5" HasShadow="False">
+                                                <Image Source="{Binding Image}" Aspect="AspectFill" 
+                                                 HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="80"/>
+                                            </Frame>
+                                            </StackLayout>
+                                            <StackLayout  Grid.Row="1" Padding="5,0,5,5" Spacing="1">
+                                                    <Label Text="{Binding Designation}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16" TextColor="#443E43" />
+                                                <Label Text="{Binding Price}" FontSize="12" TextColor="#443E43" HorizontalOptions="Center"  VerticalOptions="Center"/>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                </Grid>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                    <Frame  BindingContext="{Binding Item2}" Grid.Column="2"  Padding="1"  HasShadow="False" >
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="100"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding Status}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="#443E43"/>
+                                                <Frame  Padding="5" HasShadow="False">
+                                                <Image Source="{Binding Image}" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="80"/>
+                                            </Frame>
+                                                </StackLayout>
+                                            <StackLayout Grid.Row="1" Padding="5,0,5,5" Spacing="1">
+                                                <Label Text="{Binding Designation}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16"  TextColor="#443E43"  />
+                                                <Label Text="{Binding Price}" FontSize="12" TextColor="#443E43" HorizontalOptions="Center"  VerticalOptions="Center" />
+                                              
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
 
-<StackLayout BackgroundColor="#443E43" VerticalOptions="EndAndExpand" Orientation="Horizontal" WidthRequest="50" HeightRequest="50">
+<StackLayout BackgroundColor="#443E43" VerticalOptions="End" Orientation="Horizontal" WidthRequest="50" HeightRequest="50">
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
