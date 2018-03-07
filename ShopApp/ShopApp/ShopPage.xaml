@@ -4,41 +4,43 @@
              x:Class="ShopApp.ShopPage">
 
     <StackLayout Orientation="Vertical">
-        <StackLayout BackgroundColor="#443E43" VerticalOptions="Start" Orientation="Horizontal" WidthRequest="60" HeightRequest="60">
+      
+
+       <StackLayout BackgroundColor="#443E43" VerticalOptions="Start" Orientation="Horizontal" WidthRequest="60" HeightRequest="60">
             <ScrollView x:Name="MyScroll" Orientation = "Horizontal" >
                 <StackLayout Orientation="Horizontal">
                     <Label x:Name="Travel" Text="Travel" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
-                                Tapped="TapGestureRecognizer_OnTravelTapped"
+                                Tapped="TapGestureRecognizer_OnTapped"
                             />
                         </Label.GestureRecognizers>
                     </Label>
                     <Label x:Name="Shoes" Text="Shoes" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
-                                Tapped="TapGestureRecognizer_OnShoesTapped"
+                                Tapped="TapGestureRecognizer_OnTapped"
                             />
                         </Label.GestureRecognizers>
                     </Label>
                     <Label x:Name="Bags" Text="Bags" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer
-                            Tapped="TapGestureRecognizer_OnBagsTapped"
+                            Tapped="TapGestureRecognizer_OnTapped"
                         />
                     </Label.GestureRecognizers>
                         </Label>
                     <Label x:Name="Accessories" Text="Accessories" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
-                                Tapped="TapGestureRecognizer_OnAccessoriesTapped"
+                                Tapped="TapGestureRecognizer_OnTapped"
                             />
                         </Label.GestureRecognizers>
                     </Label>
                     <Label x:Name="Dresses" Text="Dresses" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
-                                Tapped="TapGestureRecognizer_OnDressesTapped"
+                                Tapped="TapGestureRecognizer_OnTapped"
                             />
                         </Label.GestureRecognizers>
                     </Label>
