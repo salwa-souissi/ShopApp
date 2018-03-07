@@ -11,6 +11,7 @@ namespace ShopApp
         public string Price { get; set; }
         public string Image { get; set; }
         public bool IsVisible { get; set; }
+        public string Category { get; set; }
 
     }
     public class ProductPair : Tuple<Product, Product>

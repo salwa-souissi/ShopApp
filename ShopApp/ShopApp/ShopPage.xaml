@@ -7,21 +7,50 @@
         <StackLayout BackgroundColor="#443E43" VerticalOptions="Start" Orientation="Horizontal" WidthRequest="60" HeightRequest="60">
             <ScrollView x:Name="MyScroll" Orientation = "Horizontal" >
                 <StackLayout Orientation="Horizontal">
-                    <Button Text="Travel" TextColor="White"  BackgroundColor="#443E43"></Button>
-                    <Button Text="Shoes" TextColor="White"  BackgroundColor="#443E43"></Button>
-                    <Button Text="Bags" TextColor="White"  BackgroundColor="#443E43"></Button>
-                    <Button Text="Accessories" TextColor="White"  BackgroundColor="#443E43"></Button>
-                    <Button Text="Dresses" TextColor="White"  BackgroundColor="#443E43"></Button>
+                    <Label x:Name="Travel" Text="Travel" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_OnTravelTapped"
+                            />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Shoes" Text="Shoes" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_OnShoesTapped"
+                            />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Bags" Text="Bags" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_OnBagsTapped"
+                        />
+                    </Label.GestureRecognizers>
+                        </Label>
+                    <Label x:Name="Accessories" Text="Accessories" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_OnAccessoriesTapped"
+                            />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Dresses" Text="Dresses" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_OnDressesTapped"
+                            />
+                        </Label.GestureRecognizers>
+                    </Label>
                 </StackLayout>
             </ScrollView>
         </StackLayout>
         <StackLayout Orientation="Horizontal"  VerticalOptions="Start" >
-            <SearchBar x:Name="SearchBar"  Text="Search here" FontSize="12" TextColor="Black" HorizontalOptions="FillAndExpand"   />
+            <SearchBar x:Name="SearchBar"  Placeholder="Search here" FontSize="12" TextColor="Black" HorizontalOptions="FillAndExpand"  TextChanged="SearchBar_OnTextChanged" />
             <Image Source="settings.png" HorizontalOptions="End"></Image>
         </StackLayout>
-        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="ForestGreen" >
-            <Grid Padding="10" >
-                <ListView SeparatorVisibility="None" x:Name="ListProducts" HasUnevenRows="True" VerticalOptions="Fill">
+            <Grid Padding="10" VerticalOptions="FillAndExpand">
+                <ListView SeparatorVisibility="None" x:Name="ListProducts" HasUnevenRows="True" VerticalOptions="FillAndExpand" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell >
@@ -37,15 +66,14 @@
                                                 <RowDefinition Height="100"/>
                                                 <RowDefinition Height="*"/>
                                             </Grid.RowDefinitions>
-                                            <StackLayout Orientation="Vertical">
-                                                <Label Text="{Binding Status}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="#443E43"/>
+                                            <StackLayout Orientation="Vertical" Margin="0,10,0,10">
+                                                <Label Text="{Binding Status}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="#bbbbc2"/>
                                                  <Frame  Padding="5" HasShadow="False">
-                                                <Image Source="{Binding Image}" Aspect="AspectFill" 
-                                                 HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="80"/>
+                                                <Image Source="{Binding Image}" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="80"/>
                                             </Frame>
                                             </StackLayout>
                                             <StackLayout  Grid.Row="1" Padding="5,0,5,5" Spacing="1">
-                                                    <Label Text="{Binding Designation}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16" TextColor="#443E43" />
+                                                <Label Text="{Binding Designation}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="12" TextColor="#443E43" />
                                                 <Label Text="{Binding Price}" FontSize="12" TextColor="#443E43" HorizontalOptions="Center"  VerticalOptions="Center"/>
                                                 <Grid>
                                                     <Grid.ColumnDefinitions>
@@ -63,17 +91,16 @@
                                                 <RowDefinition Height="100"/>
                                                 <RowDefinition Height="*"/>
                                             </Grid.RowDefinitions>
-                                            <StackLayout Orientation="Vertical">
-                                                <Label Text="{Binding Status}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="#443E43"/>
+                                            <StackLayout Orientation="Vertical"  Margin="0,10,0,10">
+                                                <Label Text="{Binding Status}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="#bbbbc2"/>
                                                 <Frame  Padding="5" HasShadow="False">
                                                 <Image Source="{Binding Image}" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="80"/>
                                             </Frame>
                                                 </StackLayout>
-                                            <StackLayout Grid.Row="1" Padding="5,0,5,5" Spacing="1">
-                                                <Label Text="{Binding Designation}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="16"  TextColor="#443E43"  />
+                                            <StackLayout Grid.Row="1" Spacing="1" >
+                                                <Label Text="{Binding Designation}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="12"  TextColor="#443E43"  />
                                                 <Label Text="{Binding Price}" FontSize="12" TextColor="#443E43" HorizontalOptions="Center"  VerticalOptions="Center" />
-                                              
-                                            </StackLayout>
+                                              </StackLayout>
                                         </Grid>
                                     </Frame>
                                 </Grid>
@@ -82,7 +109,6 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </Grid>
-        </StackLayout>
 
 <StackLayout BackgroundColor="#443E43" VerticalOptions="End" Orientation="Horizontal" WidthRequest="50" HeightRequest="50">
             <Grid >
@@ -98,7 +124,7 @@
                 </Grid.ColumnDefinitions>
             </Grid>
 
-            <Image  Source="Home.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand" HeightRequest="30" WidthRequest="30"/>
+            <Image  Source="Home.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand" HeightRequest="35" WidthRequest="35"/>
             <Image Source="Search.png"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand"  HeightRequest="20" WidthRequest="20"/>
             <Image Source="Menu.png" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand"  HeightRequest="20" WidthRequest="20"/>
             <Image  Source="Cart.png" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20" />
