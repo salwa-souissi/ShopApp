@@ -34,7 +34,7 @@ namespace ShopApp
                 new ProductPair(new Product{Designation = "HANDBAG NATURAL LEATHER",Status = "New",Price = "770.00 SAR",Image = "p3.png",Category = "Bags"},
                                 new Product{Designation = "CONCORD HANDWATCH",Status = "Almost New",Price = "3000.00 SAR",Image = "p4.png",Category = "Accessories"}),
                 new ProductPair(new Product{Designation = "EVENING SHOES HIGH HEAL",Status = "Almost New",Price = "2200 SAR",Image = "p5.png",Category = "Shoes"},
-                                new Product{Designation = "HANDBAG NATURAL LEATHER",Status = "Almost New",Price = "770.00 SAR",Image = "p6.png",Category = "Bags"}),
+                                new Product{Designation = "BELT NATURAL LEATHER",Status = "Almost New",Price = "770.00 SAR",Image = "p6.png",Category = "Accessories"}),
             };
         }
 

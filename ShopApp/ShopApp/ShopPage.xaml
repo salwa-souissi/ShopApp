@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShopApp.ShopPage">
+             x:Class="ShopApp.ShopPage"
+             BackgroundColor="White">
 
     <StackLayout Orientation="Vertical">
-      
 
-       <StackLayout BackgroundColor="#443E43" VerticalOptions="Start" Orientation="Horizontal" WidthRequest="60" HeightRequest="60">
+
+        <StackLayout BackgroundColor="#443E43" VerticalOptions="Start" Orientation="Horizontal" WidthRequest="60" HeightRequest="60">
             <ScrollView x:Name="MyScroll" Orientation = "Horizontal" >
                 <StackLayout Orientation="Horizontal">
                     <Label x:Name="Travel" Text="Travel" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
@@ -24,12 +25,12 @@
                         </Label.GestureRecognizers>
                     </Label>
                     <Label x:Name="Bags" Text="Bags" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
                             Tapped="TapGestureRecognizer_OnTapped"
                         />
-                    </Label.GestureRecognizers>
-                        </Label>
+                        </Label.GestureRecognizers>
+                    </Label>
                     <Label x:Name="Accessories" Text="Accessories" TextColor="Gray"  BackgroundColor="#443E43" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontSize="18" Margin="5,0,5,0">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer
@@ -51,68 +52,68 @@
             <SearchBar x:Name="SearchBar"  Placeholder="Search here" FontSize="12" TextColor="Black" HorizontalOptions="FillAndExpand"  TextChanged="SearchBar_OnTextChanged" />
             <Image Source="settings.png" HorizontalOptions="End"></Image>
         </StackLayout>
-            <Grid Padding="10" VerticalOptions="FillAndExpand">
-                <ListView SeparatorVisibility="None" x:Name="ListProducts" HasUnevenRows="True" VerticalOptions="FillAndExpand" >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell >
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="0"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Frame BindingContext="{Binding Item1}" Padding="1"  HasShadow="False" >
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="100"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <StackLayout Orientation="Vertical" Margin="0,10,0,10">
-                                                <Label Text="{Binding Status}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="#bbbbc2"/>
-                                                 <Frame  Padding="5" HasShadow="False">
+        <Grid Padding="10" VerticalOptions="FillAndExpand">
+            <ListView SeparatorVisibility="None" x:Name="ListProducts" HasUnevenRows="True" VerticalOptions="FillAndExpand" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="0"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame BindingContext="{Binding Item1}" Padding="1"  HasShadow="False" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="100"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <StackLayout Orientation="Vertical" Margin="0,10,0,10">
+                                            <Label Text="{Binding Status}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="#bbbbc2"/>
+                                            <Frame  Padding="5" HasShadow="False">
                                                 <Image Source="{Binding Image}" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="80"/>
                                             </Frame>
-                                            </StackLayout>
-                                            <StackLayout  Grid.Row="1" Padding="5,0,5,5" Spacing="1">
-                                                <Label Text="{Binding Designation}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="12" TextColor="#443E43" />
-                                                <Label Text="{Binding Price}" FontSize="12" TextColor="#443E43" HorizontalOptions="Center"  VerticalOptions="Center"/>
-                                                <Grid>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="*"/>
-                                                        <ColumnDefinition Width="100"/>
-                                                        <ColumnDefinition Width="*"/>
-                                                    </Grid.ColumnDefinitions>
-                                                </Grid>
-                                            </StackLayout>
-                                        </Grid>
-                                    </Frame>
-                                    <Frame  BindingContext="{Binding Item2}" Grid.Column="2"  Padding="1"  HasShadow="False" >
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="100"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <StackLayout Orientation="Vertical"  Margin="0,10,0,10">
-                                                <Label Text="{Binding Status}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="#bbbbc2"/>
-                                                <Frame  Padding="5" HasShadow="False">
+                                        </StackLayout>
+                                        <StackLayout  Grid.Row="1" Padding="5,0,5,5" Spacing="1">
+                                            <Label Text="{Binding Designation}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="12" TextColor="#443E43" />
+                                            <Label Text="{Binding Price}" FontSize="12" TextColor="#443E43" HorizontalOptions="Center"  VerticalOptions="Center"/>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                                <Frame  BindingContext="{Binding Item2}" Grid.Column="2"  Padding="1"  HasShadow="False" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="100"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <StackLayout Orientation="Vertical"  Margin="0,10,0,10">
+                                            <Label Text="{Binding Status}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="#bbbbc2"/>
+                                            <Frame  Padding="5" HasShadow="False">
                                                 <Image Source="{Binding Image}" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="80"/>
                                             </Frame>
-                                                </StackLayout>
-                                            <StackLayout Grid.Row="1" Spacing="1" >
-                                                <Label Text="{Binding Designation}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="12"  TextColor="#443E43"  />
-                                                <Label Text="{Binding Price}" FontSize="12" TextColor="#443E43" HorizontalOptions="Center"  VerticalOptions="Center" />
-                                              </StackLayout>
-                                        </Grid>
-                                    </Frame>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="1" Spacing="1" >
+                                            <Label Text="{Binding Designation}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="12"  TextColor="#443E43"  />
+                                            <Label Text="{Binding Price}" FontSize="12" TextColor="#443E43" HorizontalOptions="Center"  VerticalOptions="Center" />
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
 
-<StackLayout BackgroundColor="#443E43" VerticalOptions="End" Orientation="Horizontal" WidthRequest="50" HeightRequest="50">
+        <StackLayout BackgroundColor="#443E43" VerticalOptions="End" Orientation="Horizontal" WidthRequest="50" HeightRequest="50">
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
